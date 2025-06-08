@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/practica.css" />
+  <title>CSS Básico</title>
+</head>
+<body>
+  <header class="main-header">
+    <h1 class="logo">Mi Web CSS</h1>
+    <nav class="main-nav">
+      <button class="menu-toggle" id="menuToggle">☰</button>
+      <ul id="navList" class="nav-list">
+        <li><a href="./index.html">Inicio</a></li>
+        <li><a href="./practicacss.html">Práctica CSS</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Selectores CSS</h2>
+
+    <section class="selector-section">
+      <h3>Selector Universal</h3>
+      <p>Selecciona todos los elementos del documento sin importar la etiqueta.</p>
+      <pre><code>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+      </code></pre>
+    </section>
+
+    <section class="selector-section">
+      <h3>Selector de Etiqueta</h3>
+      <p>Ejemplo para la etiqueta <code>&lt;p&gt;</code>.</p>
+      <p>Este párrafo usa el selector de etiqueta.</p>
+      <pre><code>
+p {
+  font-size: 1.2rem;
+  color: #ff5722;
+  line-height: 1.6;
+}
+      </code></pre>
+    </section>
+
+    <section class="selector-section">
+      <h3>Selector de Clase</h3>
+      <div class="selectorDeClase">Este div usa una clase llamada <code>.selectorDeClase</code>.</div>
+      <pre><code>
+.selectorDeClase {
+  background-color: #d0ebff;
+  padding: 1rem;
+  border-left: 5px solid #339af0;
+  font-weight: bold;
+}
+      </code></pre>
+    </section>
+
+    <section class="selector-section">
+      <h3>Selector de ID</h3>
+      <h4 id="tituloPrincipal">Este título usa un ID llamado <code>#tituloPrincipal</code></h4>
+      <pre><code>
+#tituloPrincipal {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #2b8a3e;
+}
+      </code></pre>
+    </section>
+
+    <section class="selector-section">
+      <h3>Selector Descendente</h3>
+      <p>Ejemplo: <code>nav ul li a</code> aplica a los enlaces del menú dentro de una lista.</p>
+      <pre><code>
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+}
+      </code></pre>
+    </section>
+
+    <section class="selector-section">
+      <h3>Pseudoclase <code>:hover</code></h3>
+      <p>Pasa el mouse sobre los enlaces del menú para ver el efecto visual aplicado con <code>:hover</code>.</p>
+      <pre><code>
+nav ul li a:hover {
+  background-color: #d9480f;
+  border-radius: 4px;
+}
+      </code></pre>
+    </section>
+  </main>
+
+  <script>
+    // Menú responsive
+    const menuToggle = document.getElementById('menuToggle');
+    const navList = document.getElementById('navList');
+    menuToggle.addEventListener('click', () => {
+      navList.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
