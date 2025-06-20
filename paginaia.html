@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Conoce a ChatGPT</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --verde-chatgpt: #10a37f;
+      --gris-claro: #f0f0f0;
+      --negro-suave: #222;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: var(--gris-claro);
+      color: var(--negro-suave);
+    }
+
+    .navbar {
+      background-color: var(--verde-chatgpt);
+    }
+
+    .navbar .nav-link,
+    .navbar-brand {
+      color: white !important;
+    }
+
+    .hero {
+      background-color: white;
+      padding: 4rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .hero h1 {
+      color: var(--verde-chatgpt);
+    }
+
+    .content-section {
+      padding: 2rem 1rem;
+    }
+
+    footer {
+      background-color: var(--verde-chatgpt);
+      color: white;
+    }
+
+    footer a {
+      color: #d4fff4;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header con menú -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">ChatGPT</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon bg-light rounded"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            
+          <li class="nav-item">
+
+        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+              </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#sobre-mi">Sobre mí</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#funcionalidades">Qué puedo hacer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contacto">Contacto</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero principal -->
+  <section class="hero">
+    <div class="container">
+      <h1>Hola, soy ChatGPT</h1>
+      <p class="lead">Un modelo avanzado de lenguaje creado por OpenAI. Estoy aquí para ayudarte con ideas, aprender y resolver problemas.</p>
+    </div>
+  </section>
+
+  <!-- Sección Sobre mí -->
+  <section id="sobre-mi" class="content-section">
+    <div class="container">
+      <h2 class="text-center mb-4">Sobre mí</h2>
+      <p>
+        Soy una inteligencia artificial entrenada con grandes volúmenes de texto, capaz de entender y generar lenguaje natural. Desde ayudarte a redactar correos, explicar temas complejos, escribir código, hasta darte ideas creativas... ¡Estoy aquí para lo que necesites!
+      </p>
+    </div>
+  </section>
+
+  <!-- Sección Qué puedo hacer -->
+  <section id="funcionalidades" class="content-section bg-white">
+    <div class="container">
+      <h2 class="text-center mb-4">¿Qué puedo hacer por ti?</h2>
+      <div class="row text-center">
+        <div class="col-md-4">
+          <h4>Responder preguntas</h4>
+          <p>Desde temas escolares hasta tecnología avanzada, explico lo que quieras.</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Escribir contenido</h4>
+          <p>Redacciones, guiones, resúmenes, correos profesionales o creativos.</p>
+        </div>
+        <div class="col-md-4">
+          <h4>Ayuda en programación</h4>
+          <p>Resuelvo errores, explico código y te ayudo a aprender nuevos lenguajes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Contacto -->
+  <section id="contacto" class="content-section">
+    <div class="container">
+      <h2 class="text-center mb-4">¿Quieres saber más?</h2>
+      <p class="text-center">
+        Puedes encontrarme en <a href="https://chat.openai.com/" target="_blank">chat.openai.com</a> o seguir explorando las herramientas que OpenAI tiene para ti.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center text-lg-start mt-5">
+    <div class="container p-4">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <h5>ChatGPT</h5>
+          <p>Una herramienta de lenguaje natural desarrollada por OpenAI.</p>
+        </div>
+        <div class="col-md-6 mb-3 text-md-end">
+          <p>&copy; 2025 OpenAI. Todos los derechos reservados.</p>
+          <a href="https://openai.com/" target="_blank">Visita openai.com</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
