@@ -1,160 +1,643 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Conoce a ChatGPT</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-    :root {
-      --verde-chatgpt: #10a37f;
-      --gris-claro: #f0f0f0;
-      --negro-suave: #222;
-    }
-
-    body {
-      font-family: Arial, sans-serif;
-      background-color: var(--gris-claro);
-      color: var(--negro-suave);
-    }
-
-    .navbar {
-      background-color: var(--verde-chatgpt);
-    }
-
-    .navbar .nav-link,
-    .navbar-brand {
-      color: white !important;
-    }
-
-    .hero {
-      background-color: white;
-      padding: 4rem 1rem;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-
-    .hero h1 {
-      color: var(--verde-chatgpt);
-    }
-
-    .content-section {
-      padding: 2rem 1rem;
-    }
-
-    footer {
-      background-color: var(--verde-chatgpt);
-      color: white;
-    }
-
-    footer a {
-      color: #d4fff4;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ModaTrends - Tienda Online de Ropa</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS Personalizado -->
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --dark-color: #292f36;
+            --light-color: #f7fff7;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--dark-color);
+        }
+        
+        .navbar {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color) !important;
+            font-size: 1.8rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            margin: 0 10px;
+        }
+        
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1483985988355-763728e1935b?ixlib=rb-4.0.3');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+        }
+        
+        .btn-primary:hover {
+            background-color: #ff5252;
+            border-color: #ff5252;
+        }
+        
+        .section-title {
+            font-weight: 700;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .product-card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .product-img {
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .product-title {
+            font-weight: 600;
+            margin-top: 15px;
+        }
+        
+        .product-price {
+            color: var(--primary-color);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+        
+        .badge-sale {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+            font-weight: 600;
+        }
+        
+        .testimonial-card {
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin: 15px;
+        }
+        
+        .testimonial-img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+        
+        .star-rating {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .newsletter-section {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 80px 0;
+        }
+        
+        .footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-links h5 {
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Header con menú -->
-  <nav class="navbar navbar-expand-lg">
-    <div class="container">
-      <a class="navbar-brand" href="#">ChatGPT</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon bg-light rounded"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-            
-          <li class="nav-item">
-
-        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
-              </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#sobre-mi">Sobre mí</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#funcionalidades">Qué puedo hacer</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contacto">Contacto</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Hero principal -->
-  <section class="hero">
-    <div class="container">
-      <h1>Hola, soy ChatGPT</h1>
-      <p class="lead">Un modelo avanzado de lenguaje creado por OpenAI. Estoy aquí para ayudarte con ideas, aprender y resolver problemas.</p>
-    </div>
-  </section>
-
-  <!-- Sección Sobre mí -->
-  <section id="sobre-mi" class="content-section">
-    <div class="container">
-      <h2 class="text-center mb-4">Sobre mí</h2>
-      <p>
-        Soy una inteligencia artificial entrenada con grandes volúmenes de texto, capaz de entender y generar lenguaje natural. Desde ayudarte a redactar correos, explicar temas complejos, escribir código, hasta darte ideas creativas... ¡Estoy aquí para lo que necesites!
-      </p>
-    </div>
-  </section>
-
-  <!-- Sección Qué puedo hacer -->
-  <section id="funcionalidades" class="content-section bg-white">
-    <div class="container">
-      <h2 class="text-center mb-4">¿Qué puedo hacer por ti?</h2>
-      <div class="row text-center">
-        <div class="col-md-4">
-          <h4>Responder preguntas</h4>
-          <p>Desde temas escolares hasta tecnología avanzada, explico lo que quieras.</p>
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">ModaTrends</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#nuevo">Nuevo</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mujer">Mujer</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#hombre">Hombre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#ofertas">Ofertas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contacto">Contacto</a>
+                    </li>
+                </ul>
+                <div class="ms-3 d-flex">
+                    <a href="#" class="btn btn-outline-dark me-2"><i class="fas fa-search"></i></a>
+                    <a href="#" class="btn btn-outline-dark me-2"><i class="fas fa-user"></i></a>
+                    <a href="#" class="btn btn-outline-dark"><i class="fas fa-shopping-cart"></i></a>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-          <h4>Escribir contenido</h4>
-          <p>Redacciones, guiones, resúmenes, correos profesionales o creativos.</p>
-        </div>
-        <div class="col-md-4">
-          <h4>Ayuda en programación</h4>
-          <p>Resuelvo errores, explico código y te ayudo a aprender nuevos lenguajes.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </nav>
 
-  <!-- Sección Contacto -->
-  <section id="contacto" class="content-section">
-    <div class="container">
-      <h2 class="text-center mb-4">¿Quieres saber más?</h2>
-      <p class="text-center">
-        Puedes encontrarme en <a href="https://chat.openai.com/" target="_blank">chat.openai.com</a> o seguir explorando las herramientas que OpenAI tiene para ti.
-      </p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="text-center text-lg-start mt-5">
-    <div class="container p-4">
-      <div class="row">
-        <div class="col-md-6 mb-3">
-          <h5>ChatGPT</h5>
-          <p>Una herramienta de lenguaje natural desarrollada por OpenAI.</p>
+    <!-- Hero Section -->
+    <section class="hero-section" id="inicio">
+        <div class="container">
+            <h1 class="hero-title">Colección Verano 2023</h1>
+            <p class="hero-subtitle">Descubre las últimas tendencias en moda para esta temporada</p>
+            <a href="#nuevo" class="btn btn-primary btn-lg">Ver Colección</a>
         </div>
-        <div class="col-md-6 mb-3 text-md-end">
-          <p>&copy; 2025 OpenAI. Todos los derechos reservados.</p>
-          <a href="https://openai.com/" target="_blank">Visita openai.com</a>
+    </section>
+
+    <!-- Sección de Categorías -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="p-4 border rounded-circle d-inline-block">
+                        <i class="fas fa-tshirt fa-2x"></i>
+                    </div>
+                    <h5 class="mt-3">Camisetas</h5>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="p-4 border rounded-circle d-inline-block">
+                        <i class="fas fa-vest fa-2x"></i>
+                    </div>
+                    <h5 class="mt-3">Vestidos</h5>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="p-4 border rounded-circle d-inline-block">
+                        <i class="fas fa-jeans fa-2x"></i>
+                    </div>
+                    <h5 class="mt-3">Pantalones</h5>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <div class="p-4 border rounded-circle d-inline-block">
+                        <i class="fas fa-shoe-prints fa-2x"></i>
+                    </div>
+                    <h5 class="mt-3">Zapatos</h5>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Sección Nuevos Productos -->
+    <section class="py-5 bg-light" id="nuevo">
+        <div class="container">
+            <h2 class="text-center section-title">Nuevos Productos</h2>
+            <div class="row">
+                <!-- Producto 1 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3" class="img-fluid product-img" alt="Camiseta básica">
+                            <span class="badge-sale">Nuevo</span>
+                        </div>
+                        <div class="p-3 text-center">
+                            <h5 class="product-title">Camiseta Básica Algodón</h5>
+                            <p class="text-muted">Variedad de colores disponibles</p>
+                            <p class="product-price">$24.99</p>
+                            <button class="btn btn-outline-dark btn-sm">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Producto 2 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1520367445093-50dc08a59d9d?ixlib=rb-4.0.3" class="img-fluid product-img" alt="Jeans slim">
+                            <span class="badge-sale">Nuevo</span>
+                        </div>
+                        <div class="p-3 text-center">
+                            <h5 class="product-title">Jeans Slim Fit</h5>
+                            <p class="text-muted">Corte moderno y cómodo</p>
+                            <p class="product-price">$59.99</p>
+                            <button class="btn btn-outline-dark btn-sm">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Producto 3 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1551232864-3f0890e580d9?ixlib=rb-4.0.3" class="img-fluid product-img" alt="Vestido floral">
+                            <span class="badge-sale">Nuevo</span>
+                        </div>
+                        <div class="p-3 text-center">
+                            <h5 class="product-title">Vestido Floral Verano</h5>
+                            <p class="text-muted">Tela fresca y ligera</p>
+                            <p class="product-price">$45.99</p>
+                            <button class="btn btn-outline-dark btn-sm">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Producto 4 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?ixlib=rb-4.0.3" class="img-fluid product-img" alt="Zapatos deportivos">
+                            <span class="badge-sale">Nuevo</span>
+                        </div>
+                        <div class="p-3 text-center">
+                            <h5 class="product-title">Zapatos Deportivos Lite</h5>
+                            <p class="text-muted">Ultraligeros y transpirables</p>
+                            <p class="product-price">$79.99</p>
+                            <button class="btn btn-outline-dark btn-sm">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                           </div>
+        </div>
+    </section>
 
+    <!-- Sección de Ofertas -->
+    <section class="py-5" id="ofertas">
+        <div class="container">
+            <h2 class="text-center section-title">Ofertas Especiales</h2>
+            <div class="row">
+                <!-- Producto en oferta 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1529374255404-311a2a4f1fd9?ixlib=rb-4.0.3" class="img-fluid product-img" alt="Chaqueta denim">
+                            <span class="badge-sale">-30%</span>
+                        </div>
+                        <div class="p-3 text-center">
+                            <h5 class="product-title">Chaqueta Denim Clásica</h5>
+                            <p class="text-muted"><del>$89.99</del> <span class="text-danger">$62.99</span></p>
+                            <p class="product-price">Oferta por tiempo limitado</p>
+                            <button class="btn btn-outline-dark btn-sm">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Producto en oferta 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1543076447-215ad9ba6923?ixlib=rb-4.0.3" class="img-fluid product-img" alt="Conjunto deportivo">
+                            <span class="badge-sale">-25%</span>
+                        </div>
+                        <div class="p-3 text-center">
+                            <h5 class="product-title">Conjunto Deportivo</h5>
+                            <p class="text-muted"><del>$49.99</del> <span class="text-danger">$37.49</span></p>
+                            <p class="product-price">Sólo este fin de semana</p>
+                            <button class="btn btn-outline-dark btn-sm">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Producto en oferta 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-card">
+                        <div class="position-relative">
+                            <img src="https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?ixlib=rb-4.0.3" class="img-fluid product-img" alt="Bolso de mano">
+                            <span class="badge-sale">-40%</span>
+                        </div>
+                        <div class="p-3 text-center">
+                            <h5 class="product-title">Bolso de Mano Elegante</h5>
+                            <p class="text-muted"><del>$120.00</del> <span class="text-danger">$72.00</span></p>
+                            <p class="product-price">Edición limitada</p>
+                            <button class="btn btn-outline-dark btn-sm">Añadir al carrito</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Testimonios -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center section-title">Lo que dicen nuestros clientes</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card text-center">
+                        <img src="https://randomuser.me/api/portraits/women/32.jpg" class="testimonial-img" alt="Cliente 1">
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-4">"La calidad de la ropa superó mis expectativas. El envío fue rápido y el servicio al cliente muy atento."</p>
+                        <h5>María González</h5>
+                        <p class="text-muted">Cliente desde 2021</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card text-center">
+                        <img src="https://randomuser.me/api/portraits/men/75.jpg" class="testimonial-img" alt="Cliente 2">
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <p class="mb-4">"Encontré exactamente lo que buscaba. Los jeans son muy cómodos y la talla era perfecta. ¡Volveré a comprar!"</p>
+                        <h5>Carlos Mendoza</h5>
+                        <p class="text-muted">Cliente desde 2022</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="testimonial-card text-center">
+                        <img src="https://randomuser.me/api/portraits/women/63.jpg" class="testimonial-img" alt="Cliente 3">
+                        <div class="star-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="mb-4">"Me encanta comprar aquí porque siempre tienen las últimas tendencias a precios accesibles. Muy recomendable."</p>
+                        <h5>Laura Jiménez</h5>
+                        <p class="text-muted">Cliente desde 2020</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Características -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-3 mb-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <h4>Envío Rápido</h4>
+                    <p class="text-muted">Entrega en 24-48 horas en pedidos realizados antes de las 14:00</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h4>Devoluciones Fáciles</h4>
+                    <p class="text-muted">30 días para devoluciones gratuitas</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h4>Pago Seguro</h4>
+                    <p class="text-muted">Protegemos tus datos con cifrado SSL</p>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h4>Soporte 24/7</h4>
+                    <p class="text-muted">Nuestro equipo está siempre disponible para ayudarte</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Newsletter -->
+    <section class="newsletter-section" id="contacto">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h3 class="mb-3">Suscríbete a nuestro newsletter</h3>
+                    <p>Recibe ofertas exclusivas, novedades y tendencias de moda directamente en tu correo.</p>
+                </div>
+                <div class="col-md-6">
+                    <form class="row g-3">
+                        <div class="col-8">
+                            <input type="email" class="form-control" placeholder="Tu correo electrónico">
+                        </div>
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary w-100">Suscribirse</button>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="privacyCheck">
+                                <label class="form-check-label" for="privacyCheck">
+                                    Acepto la política de privacidad
+                                </label>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="mb-4">ModaTrends</h5>
+                    <p>Tu tienda online de moda con las últimas tendencias a precios accesibles.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Comprar</h5>
+                    <ul>
+                        <li><a href="#">Mujer</a></li>
+                        <li><a href="#">Hombre</a></li>
+                        <li><a href="#">Niños</a></li>
+                        <li><a href="#">Accesorios</a></li>
+                        <li><a href="#">Ofertas</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Información</h5>
+                    <ul>
+                        <li><a href="#">Sobre nosotros</a></li>
+                        <li><a href="#">Blog de moda</a></li>
+                        <li><a href="#">Trabaja con nosotros</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Política de privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contacto</h5>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> Calle Moda 123, Madrid</li>
+                        <li><i class="fas fa-phone me-2"></i> +34 910 123 456</li>
+                        <li><i class="fas fa-envelope me-2"></i> info@modatrends.com</li>
+                        <li><i class="fas fa-clock me-2"></i> L-V: 9:00 - 18:00</li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4" style="background-color: #495057;">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 ModaTrends. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <img src="https://via.placeholder.com/300x50?text=Payment+Methods" alt="Métodos de pago" class="img-fluid" style="max-height: 30px;">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón para volver arriba -->
+    <a href="#" class="back-to-top" id="backToTop"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Script personalizado -->
+    <script>
+        // Botón para volver arriba
+        $(window).scroll(function() {
+            if ($(this).scrollTop() > 300) {
+                $('#backToTop').addClass('visible');
+            } else {
+                $('#backToTop').removeClass('visible');
+            }
+        });
+        
+        $('#backToTop').click(function(e) {
+            e.preventDefault();
+            $('html, body').animate({scrollTop: 0}, '300');
+        });
+        
+        // Animación para los elementos al hacer scroll
+        $(document).ready(function() {
+            $('.product-card').each(function(i) {
+                $(this).delay(i * 200).animate({opacity: 1}, 800);
+            });
+        });
+    </script>
 </body>
 </html>
